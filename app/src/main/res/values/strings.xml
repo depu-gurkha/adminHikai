@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">RKMHIKAI ADMIN</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings for Menu navigation-->
+    <string name="menu_home">Dash Board</string>
+    <string name="menu_session">Session Details</string>
+    <string name="menu_batch">Batch Details</string>
+    <string name="menu_course">Course Details</string>
+    <string name="menu_school">School Details</string>
+    <string name="menu_users">User And Account</string>
+    <string name="menu_notificatiioin">Notifications</string>
+    <string name="menu_message">Messages</string>
+    <string name="menu_broadcast">Broadcast</string>
+    <string name="menu_setting">Settings</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_feedback">Send Feedback</string>
+    <string name="menu_contact">Contact Us</string>
+    <string name="menu_about">About Us</string>
+    <string name="menu_scheduler">Schedule</string>
+    <string name="menu_preview">Preview As Student</string>
+    <string name="logout">Log Out</string>
+
+    <string name="aboutHikai">
+
+\tThe Hybrid Interactive Knowledge Assimilation Initiative (HIKAI) being launched by Ramakrishna Mission to provide structured curriculum as per the Board syllabus to all school-going students in Meghalaya. You are aware that the schools are not allowed to function in normal mode by the Government fearing community spread of COVID19.\n
+        \tSo, the two centres of the Ramakrishna Mission in Meghalaya viz, the Sohra (Cherrapunjee) centre and the Shillong centre are combining their expertise to provide education through an innovative the Hybrid Interactive Knowledge Assimilation Initiative (HIKAI) from 17 August 2020 for any student in Meghalaya, who wants to use this facility. To begin with we are launching the program for classes IX to XII.
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="SessionType">
+        <item value="">Select Session Type</item>
+        <item value="School Academic">School Academic</item>
+        <item value="Computer Training">Computer Training</item>
+        <item value="Art Training">Art Training</item>
+    </string-array>
+    <!--    For quiz-->
+    <string-array name="answerOption">
+        <item value="a">A</item>
+        <item value="b">B</item>
+        <item value="c">C</item>
+        <item value="d">D</item>
+    </string-array>
+    <!-- For contact page-->
+    <string name="rkm">Ramakrishna Mission Vivekananda Cultural Center, Shillong</string>
+    <string name="rkmaddress">Quinton Road, Pincode: 793001 \nMeghalaya India</string>
+    <!-- About -->
+    <string name="hikai"><font color="#263238">Hybrid Interactive Knowledge Assimilation Initiative</font></string>
+    <string name="about"><font color="#263238">The Hybrid Interactive Knowledge Assimilation Initiative</font><font color="#FF5733">(HIKAI)</font> being launched by Ramakrishna Mission to provide structured curriculum as per the Board syllabus to all school-going students in Meghalaya. You are aware that the schools are not allowed to function in normal mode by the Government fearing community spread of COVID19.</string>
+    <string name="about2">So, the two centres of the Ramakrishna Mission in Meghalaya viz, the Sohra (Cherrapunjee) centre and the Shillong centre are combining their expertise to provide education through an innovative the Hybrid Interactive Knowledge Assimilation Initiative (HIKAI) from 17 August 2020 for any student in Meghalaya, who wants to use this facility. To begin with we are launching the program for classes IX to XII.</string>
+    <!-- Developers And versions -->
+    <string name="version">Version 2.0(BETA)</string>
+    <string name="developed"></string>
+</resources>

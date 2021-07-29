@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="online.rkmhikai.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_session"
+        android:name="online.rkmhikai.ui.session.SessionFragment"
+        android:label="@string/menu_session"
+        tools:layout="@layout/fragment_session" />
+
+    <fragment
+        android:id="@+id/nav_batch"
+        android:name="online.rkmhikai.ui.batch.BatchFragment"
+        android:label="@string/menu_batch"
+        tools:layout="@layout/fragment_batch" />
+    <fragment
+        android:id="@+id/nav_course_list"
+        android:name="online.rkmhikai.ui.courseList.CourseListFragment"
+        android:label="@string/menu_course"
+        tools:layout="@layout/course_list_fragment" />
+    <fragment
+        android:id="@+id/nav_users"
+        android:name="online.rkmhikai.ui.users.UserFragment"
+        android:label="@string/menu_users"
+        tools:layout="@layout/user_fragment" />
+    <fragment
+        android:id="@+id/nav_scheduler"
+        android:name="online.rkmhikai.ui.scheduler.Scheduler"
+        android:label="@string/menu_scheduler"
+        tools:layout="@layout/scheduler_fragment" />
+    <fragment
+        android:id="@+id/nav_school"
+        android:name="online.rkmhikai.ui.school.SchoolFragment"
+        android:label="@string/menu_school"
+        tools:layout="@layout/school_fragment" />
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="online.rkmhikai.ui.notification.NotificationFragment"
+        android:label="@string/menu_notificatiioin"
+        tools:layout="@layout/notification_fragment" />
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="online.rkmhikai.ui.conatact.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/contact_fragment" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="online.rkmhikai.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/about_fragment" />
+
+
+
+
+</navigation>

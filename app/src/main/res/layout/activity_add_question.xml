@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.courseList.details.quiz.AddQuestionActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:text="Add Question"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"/>
+    <ScrollView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Question"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Question"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Option A"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lOptionA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_option_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Option A"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Option B"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lOptionB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_option_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Option B"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Option C"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lOptionC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_option_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Option C"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Option C"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lOptionD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_option_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Option D"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Answer"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp"/>
+            <!--            <EditText-->
+            <!--                android:id="@+id/et_session_type"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint="Enter Session Type" />-->
+            <Spinner
+                android:id="@+id/sp_answer"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:entries="@array/answerOption" />
+
+            <Button
+                android:id="@+id/btn_add_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_700"
+                android:backgroundTint="@color/purple_700"
+                android:textSize="20dp"
+                android:text="Add Question"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

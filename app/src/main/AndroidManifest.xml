@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="online.rkmhikai">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@raw/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@raw/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RKMHIKAI_ADMIN">
+        <activity android:name=".ui.courseList.preview.FullScreen"></activity>
+        <activity android:name=".ui.courseList.preview.SubjectPreview" />
+        <activity android:name=".ui.courseList.details.quiz.AddQuestionActivity" />
+        <activity android:name=".ui.courseList.details.quiz.AddQuizActivity" />
+        <activity android:name=".ui.courseList.details.quiz.QuizActivity" />
+        <activity android:name=".ui.school.AddSchool" />
+        <activity android:name=".ui.batch.AddBatch" />
+        <activity android:name=".ui.users.AddUsers" />
+        <activity android:name=".ui.session.AddSession" />
+        <activity android:name=".ui.courseList.details.AddLecture" />
+        <activity android:name=".ui.courseList.details.AddAssignment" />
+        <activity android:name=".ui.courseList.details.AddResource" />
+        <activity android:name=".ui.courseList.details.AddChapter" />
+        <activity android:name=".ui.courseList.details.AddSubject" />
+        <activity android:name=".ui.courseList.preview.PlayerActivity" />
+        <activity
+            android:name=".ui.splash.Splash"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".ui.authentication.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.landingpage.LandingPage"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RKMHIKAI_ADMIN.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

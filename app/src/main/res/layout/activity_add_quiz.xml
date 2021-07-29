@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.courseList.details.quiz.AddQuizActivity">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:text="Add Quiz"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"/>
+    <ScrollView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Quiz Title"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lQuizTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_quiz_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Quiz Title"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Learning Objective"
+                android:paddingStart="3dp"
+                android:paddingLeft="3dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lQuizDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_quiz_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Learning Objective"
+                    android:drawablePadding="5dp"
+                    android:inputType="text"
+                    android:paddingTop="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="14sp"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidth="10dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/black"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_add_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_700"
+                android:backgroundTint="@color/purple_700"
+                android:textSize="20dp"
+                android:text="Add"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
