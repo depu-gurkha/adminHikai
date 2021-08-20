@@ -10,12 +10,13 @@ public class Batch {
     String batchStartTime;
     String batchEndTime;
     String batchNote;
+    String batchInCharge;
 
     public Batch(){
 
     }
 
-    public Batch(int id, int sessionID, String batchName, String batchID, String moduleName, String courseName, String batchStartTime, String batchEndTime, String batchNote) {
+    public Batch(int id, int sessionID, String batchName, String batchID, String moduleName, String courseName, String batchStartTime, String batchEndTime, String batchNote,String batchInCharge) {
         this.id = id;
         this.sessionID = sessionID;
         this.batchName = batchName;
@@ -25,6 +26,15 @@ public class Batch {
         this.batchStartTime = batchStartTime;
         this.batchEndTime = batchEndTime;
         this.batchNote = batchNote;
+        this.batchInCharge=batchInCharge;
+    }
+
+    public String getBatchInCharge() {
+        return batchInCharge;
+    }
+
+    public void setBatchInCharge(String batchInCharge) {
+        this.batchInCharge = batchInCharge;
     }
 
     public int getId() {

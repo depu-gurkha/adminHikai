@@ -70,7 +70,7 @@ public class AddChapter extends AppCompatActivity {
         fabAddCourse=findViewById(R.id.fab_addChapter);
         btnAddUpdate=findViewById(R.id.btn_update);
         subjectList = new ArrayList<>();
-        adapter = new CustomItemAdapter(this, subjectList, cvAddChapter);
+
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         Bundle bundle =getIntent().getExtras();
         if(bundle!=null){
@@ -123,6 +123,7 @@ public class AddChapter extends AppCompatActivity {
     }
 
     public void loadChapter() {
+        Log.d("TAG", "loadChapter: "+"loadChapter() called  ");
 
         StringRequest request = new StringRequest(Request.Method.GET, URLs.showChapterUrl+subjectID, new Response.Listener<String>() {
             @Override
@@ -134,7 +135,7 @@ public class AddChapter extends AppCompatActivity {
                         Log.d("TAG", "onResponse: " + jsonArray);
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject subObj = jsonArray.getJSONObject(i);
-                            int subId = subObj.getInt("chapterID");
+                            int subId = subObj.getInt("subjectID");
                             String subTitle = subObj.getString("title");
                             String subDesc = subObj.getString("description");
                             int subStatus = subObj.getInt("status");
@@ -146,9 +147,13 @@ public class AddChapter extends AppCompatActivity {
                             Log.d("TAG", "onResponse: " + subId);
 
                         }
+                        adapter = new CustomItemAdapter(AddChapter.this, subjectList, cvAddChapter);
                         rvChapter.setLayoutManager(layoutManager);
                         rvChapter.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
+
+                        Log.d("TAG", "onResponse: "+"adapter Notified");
+                        Toast.makeText(AddChapter.this, "after notifying", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

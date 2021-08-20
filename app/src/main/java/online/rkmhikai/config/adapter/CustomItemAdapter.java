@@ -70,6 +70,7 @@ CustomItemAdapter extends RecyclerView.Adapter<CustomItemAdapter.CustomViewHolde
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         Subject subject = subjectsList.get(position);
+        Log.d("TAG", "onBindViewHolder: "+subject.toString());
         holder.chkTitle.setText(subject.getTitle());
         holder.tvItemDesc.setText(subject.getDesc());
         holder.tvCreated.setText("Created At " + subject.getCreatedAt());
@@ -90,6 +91,7 @@ CustomItemAdapter extends RecyclerView.Adapter<CustomItemAdapter.CustomViewHolde
                 if (ourClass.equals("class online.rkmhikai.ui.courseList.details.AddSubject")) {
                     Intent intent = new Intent(context, AddChapter.class);
                     intent.putExtra("subjectId", subjectsList.get(position).getSubId());
+
                     context.startActivity(intent);
 
                     Log.d("TAG", "onClick: " + context.getClass());
@@ -156,6 +158,7 @@ CustomItemAdapter extends RecyclerView.Adapter<CustomItemAdapter.CustomViewHolde
         if (subjectsList.size() == 0) {
             return 0;
         }
+        Log.d("TAG", "getItemCount: "+subjectsList.size());
         return subjectsList.size();
     }
 
@@ -185,7 +188,7 @@ CustomItemAdapter extends RecyclerView.Adapter<CustomItemAdapter.CustomViewHolde
         if (ourClass.equals("class online.rkmhikai.ui.courseList.details.AddSubject")) {
              url="https://classroom.chotoly.com/Subject/updateStatus";
         } else {
-             url="https://classroom.chotoly.com/Lecture/updateStatus";
+             url="https://classroom.chotoly.com/Chapter/updateStatus";
         }
         StringRequest request=new StringRequest(Request.Method.POST,url , new Response.Listener<String>() {
             @Override

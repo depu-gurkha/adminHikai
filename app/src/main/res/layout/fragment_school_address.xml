@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/vital_info_no"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_rounded"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/address_info_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/address_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text=" Address Info"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/label_school_block"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="10dp"
+        android:text="Block"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_info_title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_school_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_school_block">
+
+        <EditText
+            android:id="@+id/et_school_block"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:hint="Enter Block"
+            android:paddingStart="2dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="4dp"
+            android:textSize="14dp"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/label_school_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:layout_gravity="start"
+        android:textSize="14dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_school_block"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_school_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_school_area">
+
+        <EditText
+            android:id="@+id/et_school_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:hint="Enter Area"
+            android:paddingStart="2dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="4dp"
+            android:textSize="14dp"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/label_school_village"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Village"
+        android:layout_gravity="start"
+        android:textSize="14dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_school_area"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_school_village"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_school_village">
+
+        <EditText
+            android:id="@+id/et_school_village"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:hint="Enter Village"
+            android:paddingStart="2dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="4dp"
+            android:textSize="14dp"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/label_school_district"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="District"
+        android:layout_gravity="start"
+        android:textSize="14dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_school_village"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_school_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_school_district">
+
+        <EditText
+            android:id="@+id/et_school_district"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:hint="Enter District"
+            android:paddingStart="2dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="4dp"
+            android:textSize="14dp"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/label_school_pincode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pincode"
+        android:layout_gravity="start"
+        android:textSize="14dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_school_district"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ll_school_pincode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_school_pincode">
+
+        <EditText
+            android:id="@+id/et_school_pincode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:hint="Enter District"
+            android:paddingStart="2dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="4dp"
+            android:textSize="14dp"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

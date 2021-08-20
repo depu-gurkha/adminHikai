@@ -58,6 +58,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.SessionV
                 Toast.makeText(view.getContext(), "Clicked on: "+position+" Session ID: "+session.getSessionID(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, AddSession.class);
+                intent.putExtra("ID",SessionList.get(position).getId());
                 intent.putExtra("SessionType",SessionList.get(position).getSessionType());
                 intent.putExtra("SessionId",SessionList.get(position).getSessionID());
                 intent.putExtra("SessionStartDate",SessionList.get(position).getSessionStartDate());

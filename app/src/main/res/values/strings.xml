@@ -57,4 +57,11 @@
     <!-- Developers And versions -->
     <string name="version">Version 2.0(BETA)</string>
     <string name="developed"></string>
+    <string-array name="category">
+        <item>Select Category</item>
+        <item>IT &amp; Software</item>
+        <item>Communication Skills</item>
+        <item>Arts and Crafts</item>
+        <item>School MBOSE Syllabus</item>
+    </string-array>
 </resources>

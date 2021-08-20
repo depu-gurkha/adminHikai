@@ -14,16 +14,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.textfield.TextInputLayout;
@@ -31,7 +27,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,7 +40,7 @@ import online.rkmhikai.library.Validation;
 public class AddSession extends AppCompatActivity {
     private DatePickerDialog datePicker;
     private int year, month, day;
-
+    int id;
     String sessionType = "", sessionID = "", sessionStartDate = "", sessionEndDate = "", sessionNote = "";
 
     EditText etSessionId, etSessionType, etNote, etStartDate, etEndDate;
@@ -82,6 +77,7 @@ public class AddSession extends AppCompatActivity {
             etNote.setText(bundle.getString("Note"));
             etEndDate.setText(bundle.getString("SessionEndDate"));
             etStartDate.setText(bundle.getString("SessionStartDate"));
+            id=bundle.getInt("ID");
 
             etSessionId.setText(bundle.getString("SessionId"));
             Log.d("TAG", "onCreate: bundle " + bundle.getString("Note"));
@@ -147,14 +143,14 @@ public class AddSession extends AppCompatActivity {
                     addSession();
                 else {
                     try {
-                        updateSubject();
+                        updateSession();
+                        close();
 
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    Intent intent = new Intent(AddSession.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+
+
                 }
             }
         });
@@ -250,96 +246,31 @@ public class AddSession extends AppCompatActivity {
         }
     }
 
-    //Add New Session
-    private void updateSubjectOld() {
 
-
-        if (Validation.isEmpty(lSessionId, "Enter Valid Session Id") | Validation.isEmpty(lStartDate, "Select Valid Date") | Validation.isEmpty(lEndDate, "Select Valid Date")) {
-            Log.d("TAG", "SessionID:" + lSessionId.getEditText().getText().toString());
-            Log.d("TAG", "SessionStartDate:" + lStartDate.getEditText().getText().toString());
-            Log.d("TAG", "SessionEndDate:" + lEndDate.getEditText().getText().toString());
-
-
-            sessionID = lSessionId.getEditText().getText().toString();
-            sessionStartDate = lStartDate.getEditText().getText().toString();
-            sessionEndDate = lEndDate.getEditText().getText().toString();
-            sessionNote = etNote.getText().toString();
-            sessionType = spSessionType.getSelectedItem().toString();
-
-            Log.d("ACTUAL", "addSession(sessionID): " + sessionID);
-            Log.d("ACTUAL", "addSession(sessionStartDate): " + sessionStartDate);
-            Log.d("ACTUAL", "addSession(sessionEndDate): " + sessionEndDate);
-            Log.d("ACTUAL", "addSession(sessionNote): " + sessionNote);
-            Log.d("ACTUAL", "addSession(sessionType): " + sessionType);
-
-
-            StringRequest stringRequest = new StringRequest(Request.Method.PUT, URLs.showSessionUrl,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                Log.d("TAG", "onResponse: " + response);
-                                //converting response to json object
-                                JSONObject obj = new JSONObject(response);
-                                Log.d("Server Response", obj.toString());
-                                // if no error in response
-                                if (obj.getInt("success") == 1) {
-                                    Toast.makeText(AddSession.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
-
-                                } else {
-                                    Toast.makeText(AddSession.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
-
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-
-                            }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(AddSession.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-//                            btnSignUp.setVisibility(View.VISIBLE);
-//                            vitalProgress.setVisibility(View.GONE);
-                        }
-                    }) {
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("id", String.valueOf(17));
-                    params.put("sessionType", sessionType);
-                    params.put("sessionID", sessionID);
-                    params.put("sessionStartDate", sessionStartDate);
-                    params.put("sessionEndDate", sessionEndDate);
-                    params.put("sessionNote", sessionNote);
-                    return params;
-
-                }
-            };
-
-            RequestSingletonVolley.getInstance(AddSession.this).addToRequestQueue(stringRequest);
-        } else {
-            Toast.makeText(AddSession.this, "Please enter valid fields", Toast.LENGTH_SHORT).show();
-        }
-    }
-    public void updateSubject() throws JSONException {
+    public void updateSession() throws JSONException {
+        Log.d("TAG", "updateSession: "+"updateSession");
+        sessionID = lSessionId.getEditText().getText().toString();
+        sessionStartDate = lStartDate.getEditText().getText().toString();
+        sessionEndDate = lEndDate.getEditText().getText().toString();
+        sessionNote = etNote.getText().toString();
+        sessionType = spSessionType.getSelectedItem().toString();
+        Log.i("ID VALUE",String.valueOf(id));
 
         JSONObject main = new JSONObject();
         JSONObject input = new JSONObject();
         try {
-            input.put("id", "17");
-            input.put("sessionType", "School Academic");
-            input.put("sessionID", "245");
-            input.put("sessionStartDate", "2021-07-12");
-            input.put("sessionEndDate", "2021-09-01");
-            input.put("sessionNote", "qwert");
+            input.put("id", id);
+            input.put("sessionType", sessionType);
+            input.put("sessionID", sessionID);
+            input.put("sessionStartDate", sessionStartDate);
+            input.put("sessionEndDate", sessionEndDate);
+            input.put("sessionNote", sessionNote);
             main.put("input", input);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.POST, "https://classroom.chotoly.com/Session/api", main, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.PUT, URLs.showSessionUrl, main, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.i("VOLLEY RS", response.toString());
@@ -370,6 +301,9 @@ public class AddSession extends AppCompatActivity {
         etNote.setText("");
         etSessionId.setText("");
         etStartDate.setText("");
+        Intent intent = new Intent(AddSession.this, MainActivity.class);
+        intent.putExtra("COME",1);
+        startActivity(intent);
         finish();
     }
 

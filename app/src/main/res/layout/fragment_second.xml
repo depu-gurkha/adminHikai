@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1/2"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How about a working title?"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="It's ok if you can't think of a good title now. You can change it later. Course title"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:layout_marginTop="150dp"-->
+    <!--        android:layout_marginLeft="10dp"-->
+    <!--        android:layout_marginRight="10dp"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:counterEnabled="true"-->
+    <!--        app:counterMaxLength="60"-->
+    <!--        android:paddingStart="0dp"-->
+    <!--        android:paddingEnd="0dp">-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/et_course_title"-->
+    <!--            android:paddingTop="8dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:maxLength="60" />-->
+
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="60"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp">
+
+        <EditText
+            android:id="@+id/et_course_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/edit_text_border"
+            android:elevation="10dp"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:overScrollMode="always"
+            android:padding="5dp"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</FrameLayout>

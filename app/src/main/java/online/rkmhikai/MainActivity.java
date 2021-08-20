@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +17,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
+import androidx.navigation.NavGraph;
+import androidx.navigation.NavInflater;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -29,13 +30,15 @@ import org.jetbrains.annotations.NotNull;
 
 import online.rkmhikai.config.SharedPrefManager;
 import online.rkmhikai.ui.batch.AddBatch;
-import online.rkmhikai.ui.school.AddSchool;
+import online.rkmhikai.ui.courseList.addCourse.CourseWithSteps;
+import online.rkmhikai.ui.school.addschool.AddSchool;
 import online.rkmhikai.ui.session.AddSession;
 import online.rkmhikai.ui.users.AddUsers;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
+    int come=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavInflater navInflater = navController.getNavInflater();
+        NavGraph graph = navInflater.inflate(R.navigation.mobile_navigation);
+        Bundle bundle=getIntent().getExtras();
+        if(bundle!=null){
+            come=bundle.getInt("COME");
+        }
+        Log.d("TAG", "come: "+come);
+        //this is to dynamically use to change the home fragment
+        switch(come){
+            case 1:
+                graph.setStartDestination(R.id.nav_session);
+                break;
+            default: graph.setStartDestination(R.id.nav_home);
+        }
+
+        navController.setGraph(graph);
+
         View hView = navigationView.getHeaderView(0);
         TextView participantName = hView.findViewById(R.id.tv_participant_name);
         participantName.setText(SharedPrefManager.getInstance(this).getUser().getName());
@@ -65,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
         // This line needs to be after setupWithNavController()
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +112,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             case R.id.nav_school:
                                 intent = new Intent(MainActivity.this, AddSchool.class);
                                 startActivity(intent);
-
+                            case R.id.nav_course_list:
+                                Log.d("TAG", "onDestinationChanged: "+"Add course");
+                                intent = new Intent(MainActivity.this, CourseWithSteps.class);
+                                startActivity(intent);
                         }
                     }
                 });
@@ -100,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onDestinationChanged(@NonNull @NotNull NavController controller, @NonNull @NotNull NavDestination destination, @Nullable @org.jetbrains.annotations.Nullable Bundle arguments) {
                 if (destination.getId() == R.id.nav_home || destination.getId() == R.id.nav_scheduler || destination.getId() == R.id.nav_contact ||
-                        destination.getId() == R.id.nav_about||destination.getId()==R.id.nav_notification||destination.getId()==R.id.nav_course_list) {
+                        destination.getId() == R.id.nav_about||destination.getId()==R.id.nav_notification) {
                     fab.setVisibility(View.GONE);
                 } else {
                     fab.setVisibility(View.VISIBLE);

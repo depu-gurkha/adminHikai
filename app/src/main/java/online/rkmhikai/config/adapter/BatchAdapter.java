@@ -52,6 +52,9 @@ public class BatchAdapter extends RecyclerView.Adapter<BatchAdapter.BatchView> i
         holder.tvBatchId.setText(batch.getBatchID());
         holder.tvModuleName.setText(batch.getModuleName());
         holder.tvCourseName.setText(batch.getCourseName());
+        holder.tvStartDate.setText(batch.getBatchStartTime());
+        holder.tvEndDate.setText(batch.getBatchEndTime());
+        holder.tvNote.setText(batch.getBatchNote());
         holder.ivEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +63,13 @@ public class BatchAdapter extends RecyclerView.Adapter<BatchAdapter.BatchView> i
                 intent.putExtra("BatchId",batchList.get(position).getBatchID());
                 intent.putExtra("Module",batchList.get(position).getModuleName());
                 intent.putExtra("CourseName",batchList.get(position).getCourseName());
-                //intent.putExtra("StartDate",batchList.get(position).getBatchName());
+                intent.putExtra("StartDate",batchList.get(position).getBatchStartTime());
+                intent.putExtra("EndDate",batchList.get(position).getBatchEndTime());
+                intent.putExtra("ID",batchList.get(position).getId());
+                intent.putExtra("BatchInCharge",batchList.get(position).getBatchInCharge());
+                intent.putExtra("Note",batchList.get(position).getBatchNote());
+                intent.putExtra("SessionId",batchList.get(position).getSessionID());
+
                 context.startActivity(intent);
             }
         });

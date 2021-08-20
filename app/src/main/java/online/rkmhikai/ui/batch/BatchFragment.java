@@ -116,7 +116,7 @@ public class BatchFragment extends Fragment {
                         String batchStartTime = jsonObject.getString("batchStartTime");
                         String batchEndTime = jsonObject.getString("batchEndTime");
                         String batchNote = jsonObject.getString("batchNote");
-
+                        String batchInCharge=jsonObject.getString("batchInCharge");
                         //Batch batch = new Batch(id,sessionID,batchName,batchId,moduleName,courseName,batchStartTime,batchEndTime,batchNote);
                         Batch batch = new Batch();
                         batch.setId(id);
@@ -128,7 +128,7 @@ public class BatchFragment extends Fragment {
                         batch.setBatchStartTime(batchStartTime);
                         batch.setBatchEndTime(batchEndTime);
                         batch.setBatchNote(batchNote);
-
+                        batch.setBatchInCharge(batchInCharge);
 
                         batchList.add(batch);
                         Log.d("VOLLEY", "BatchName: " + jsonObject.getString("batchName"));

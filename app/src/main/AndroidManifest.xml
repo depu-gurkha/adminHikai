@@ -12,12 +12,13 @@
         android:roundIcon="@raw/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.RKMHIKAI_ADMIN">
-        <activity android:name=".ui.courseList.preview.FullScreen"></activity>
+        <activity android:name=".ui.courseList.addCourse.CourseWithSteps"></activity>
+        <activity android:name=".ui.courseList.preview.FullScreen" />
         <activity android:name=".ui.courseList.preview.SubjectPreview" />
         <activity android:name=".ui.courseList.details.quiz.AddQuestionActivity" />
         <activity android:name=".ui.courseList.details.quiz.AddQuizActivity" />
         <activity android:name=".ui.courseList.details.quiz.QuizActivity" />
-        <activity android:name=".ui.school.AddSchool" />
+        <activity android:name=".ui.school.addschool.AddSchool" />
         <activity android:name=".ui.batch.AddBatch" />
         <activity android:name=".ui.users.AddUsers" />
         <activity android:name=".ui.session.AddSession" />
